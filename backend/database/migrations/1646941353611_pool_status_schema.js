@@ -8,6 +8,7 @@ class PoolStatusSchema extends Schema {
     this.create('pool_status', (table) => {
       table.increments('id').primary()
       table.string('name', 64).notNullable()
+      table.timestamps()
     })
   }
 

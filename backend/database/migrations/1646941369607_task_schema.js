@@ -8,9 +8,11 @@ class TaskSchema extends Schema {
     this.create('task', (table) => {
       table.increments('id').primary()
       table.string('name', 64).notNullable()
-      table.string('content', 128).notNullable()
-      table.integer("id_board").unsigned().references("id").inTable("board")
-      table.integer("id_pool").unsigned().references("id").inTable("pool_status")
+      table.string('content', 128)
+      table.integer("board_id").unsigned().references("id").inTable("board")
+      table.integer("pool_id").unsigned().references("id").inTable("pool_status")
+      table.integer("user_id").unsigned().references("id").inTable("user")
+      table.timestamps()
     })
   }
 

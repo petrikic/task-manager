@@ -19,3 +19,12 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.post('/register', 'UserController.register')
+Route.post('/login', 'UserController.login')
+
+Route.post('/board', 'BoardController.createBoard')
+Route.get('/boards', 'BoardController.getBoards')
+
+Route.post('/task', 'TaskController.createTask')
+Route.get('tasks', 'TaskController.getTasks')

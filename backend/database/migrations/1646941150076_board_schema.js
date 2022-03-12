@@ -8,6 +8,8 @@ class BoardSchema extends Schema {
     this.create('board', (table) => {
       table.increments('id').primary()
       table.string('name', 64).notNullable()
+      table.integer("user_id").unsigned().references("id").inTable("user")
+      table.timestamps()
     })
   }
 
